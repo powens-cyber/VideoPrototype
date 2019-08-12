@@ -19535,7 +19535,7 @@ typeof navigator === "object" && (function () {
 	  // The format must be `'w:h'` (e.g. `'16:9'`)
 	  ratio: null,
 	  // Click video container to play/pause
-	  clickToPlay: true,
+	  clickToPlay: false, /////phil changed 
 	  // Auto hide the controls
 	  hideControls: true,
 	  // Reset to start when playback ended
