@@ -16973,8 +16973,47 @@ typeof navigator === "object" && (function () {
 	    ratio: ratio
 	  };
 	}
-
+	
+	
 	var html5 = {
+	var vid = document.getElementById("myVideo");
+  var currentlyPlaying = 1;
+  var currentlPlayingTime;
+  var src1 = "https://res.cloudinary.com/dikqfcmna/video/upload/v1565284459/Yellow_vhgnw7.mp4";
+  var src2 = "https://res.cloudinary.com/dikqfcmna/video/upload/v1565284456/Green_nnfvzb.mp4";
+  var src3 = "https://res.cloudinary.com/dikqfcmna/video/upload/v1565284456/Red_wmykek.mp4";
+  var src4 = "https://res.cloudinary.com/dikqfcmna/video/upload/v1565284456/Blue_sp8vsf.mp4";
+  var src5 = "https://res.cloudinary.com/dikqfcmna/video/upload/v1565284457/Pink_imw4hm.mp4";
+  var src6 = "https://res.cloudinary.com/dikqfcmna/video/upload/v1565284459/Yellow_vhgnw7.mp4";
+
+function myFunction() {
+  currentlPlayingTime = vid.currentTime;
+  if (currentlyPlaying === 1) {
+    vid.src = src2;
+    currentlyPlaying = 2;
+  } else if (currentlyPlaying === 2) {
+    vid.src = src3;
+    currentlyPlaying = 3;
+  } else if (currentlyPlaying === 3) {
+    vid.src = src4;
+    currentlyPlaying = 4;
+  } else if (currentlyPlaying === 4) {
+    vid.src = src5;
+    currentlyPlaying = 5;
+  } else if (currentlyPlaying === 5) {
+    vid.src = src6;
+    currentlyPlaying = 6; 
+  } else {
+    vid.src = src1;
+    currentlyPlaying = 1;
+  }
+  vid.load();
+  vid.addEventListener('loadedmetadata', function() {
+    vid.currentTime = currentlPlayingTime;
+  }, false);
+}
+
+	/* var html5 = {
 	  getSources: function getSources() {
 	    var _this = this;
 
@@ -17140,6 +17179,8 @@ typeof navigator === "object" && (function () {
 	    this.debug.log('Cancelled network requests');
 	  }
 	};
+	
+	*/ 
 
 	function dedupe(array) {
 	  if (!is$2.array(array)) {
